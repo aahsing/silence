@@ -1,0 +1,10 @@
+# test for HPC 
+# ansible playbook for HPC cluster deployment
+
+
+- name: Hello World Sample
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
