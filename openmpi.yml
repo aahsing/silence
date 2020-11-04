@@ -1,0 +1,9 @@
+# install openmpi
+
+- name: install and config openmpi
+  host: all
+  tasks:
+    - name: install openmpi packages
+      yum:
+        name: openmpi
+        state: present

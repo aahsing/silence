@@ -2,9 +2,20 @@
 # ansible playbook for HPC cluster deployment
 
 
-- name: Hello World Sample
+- name: config ssh passwordless login
   hosts: all
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+    - name: create a ssh_hosts file including all manager and compute nodes
+      shell: echo hostvars[inventory_hostname] >> /tmp/test
+
+
+- name: install OpenPBS on manager node
+  hosts: manager
+  tasks:
+
+
+
+- name: install openPBS on compute node
+  hosts: compute
+  tasks:
+ 
