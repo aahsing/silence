@@ -7,3 +7,10 @@
       yum:
         name: openmpi
         state: present
+
+    - name: add path to env
+      lineinfile: 
+        path: /etc/profile
+        line: export PATH=$PATH:/usr/lib64/openmpi/bin
+
+
