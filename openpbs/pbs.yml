@@ -1,0 +1,23 @@
+# test for HPC workflow
+# ansible playbook for openpbs
+
+#collect info from everything
+- hosts: all
+
+#Apply Common Installation and Config
+- hosts: pbscluster
+  gather_facts: false
+  roles:
+    - pbs-common
+
+# Apply pbs server config, start services
+- hosts: server
+  gather_facts: false
+  roles:
+    - pbs-server
+
+# Apply pbs MoM config, start services
+- hosts: mom
+  gather_facts: false
+  roles:
+    - pbs-mom
